@@ -1,0 +1,24 @@
+.layui-layout-admin .layui-body {
+    bottom: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 490px;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: rgba(2, 179, 170, 0.973);
+}
+
+.layui-bg-black {
+    background-color: rgba(2, 179, 170, 0.973) !important;
+}
+
+.layui-nav {
+    background-color: rgba(2, 179, 170, 0.973) !important;
+}
+
+.layui-layout-admin .layui-logo {
+    color: #fff;
+}

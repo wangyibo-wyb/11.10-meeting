@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加会议室</title>
+    <link rel="stylesheet" href="../../css/layui.css">
+    <style>
+        .layui-form-label{
+            width: 100px;
+        }
+        .layui-input-block{
+            margin-left: 130px;
+        }
+        .layui-input{
+            width: 50%;
+        }
+        .layui-form-select .layui-edge{
+            right: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议室编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="number" required lay-verify="required" placeholder="请输入会议室编号" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议室位置</label>
+            <div class="layui-input-block">
+                <input type="text" name="address" required lay-verify="required" placeholder="请输入会议室位置" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">可参会人数</label>
+            <div class="layui-input-block">
+                <input type="text" name="people" required lay-verify="required" placeholder="请输入可参会人数" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否有投影</label>
+            <div class="layui-input-block">
+                <input type="radio" name="projection" value="是" title="是" checked>
+                <input type="radio" name="projection" value="否" title="否">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否可预约</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="可预约" title="可预约" checked>
+                <input type="radio" name="status" value="不可预约" title="不可预约">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+    <script src="../../layui.js"></script>
+    <script>
+        layui.use('form', function () {
+            var form = layui.form;
+            //监听提交
+            form.on('submit(formDemo)', function (data) {
+                layer.msg(JSON.stringify(data.field));
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

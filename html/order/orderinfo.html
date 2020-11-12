@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预约信息</title>
+  <link rel="stylesheet" href="../../css/layui.css">
+  <style>
+    .paginate {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+    td:nth-last-child(3) p{
+        width: 150px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="layui-table">
+    <colgroup>
+      <col width="150">
+      <col width="200">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>预约编号</th>
+        <th>会议室编号</th>
+        <th>预约人</th>
+        <th>预约时间</th>
+        <th>参会人数</th>
+        <th>会议概要</th>
+        <th>预约状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>101</td>
+        <td>张三</td>
+        <td>2020-11-11 9:00-12:00</td>
+        <td>43</td>
+        <td><p>罗克佳华科技集团股份有限公司（简称“罗克佳华”）聚焦物联网技术的研发与应用，深耕物联网领域十余年，积累了丰富的物联网解决方案项目经验，通过持续研发投入和技术创新，公司形成了拥有自主知识产权的智能传感器、云链数据库、物联网IoT平台及人工智能AI算法等核心技术，成为一家业务涉及感知层、网络层和应用层的物联网技术企业。</p></td>
+        <td>待审核</td>
+        <td>
+          <a href="detail.html" class="layui-btn layui-btn-sm">详情</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>103</td>
+        <td>李四</td>
+        <td>2020-11-11 13:00-15:00</td>
+        <td>72</td>
+        <td><p>公司拥有国际软件能力成熟度认证评估的最高资质CMMIL5资质，以及电子与智能化工程专业承包壹级、建筑智能化系统设计专项甲级、信息系统集成及服务壹级、安全防范工程设计施工壹级等50余项资质和产品认证。</p></td>
+        <td>审核通过</td>
+        <td>
+          <a href="detail.html" class="layui-btn layui-btn-sm">详情</a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>101</td>
+        <td>王五</td>
+        <td>2020-11-12 8:00-12:00</td>
+        <td>43</td>
+        <td><p>积累了丰富的物联网解决方案项目经验，通过持续研发投入和技术创新，公司形成了拥有自主知识产权的智能传感器、云链数据库、物联网IoT平台及人工智能AI算法等核心技术，成为一家业务涉及感知层、网络层和应用层的物联网技术企业。</p></td>
+        <td>审核通过</td>
+        <td>
+          <a href="detail.html" class="layui-btn layui-btn-sm">详情</a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>101</td>
+        <td>张三</td>
+        <td>2020-11-12 9:00-12:00</td>
+        <td>30</td>
+        <td><p>公司形成了拥有自主知识产权的智能传感器、云链数据库、物联网IoT平台及人工智能AI算法等核心技术，成为一家业务涉及感知层、网络层和应用层的物联网技术企业。</p></td>
+        <td>待审核</td>
+        <td>
+          <a href="detail.html" class="layui-btn layui-btn-sm">详情</a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>202</td>
+        <td>王五</td>
+        <td>2020-11-13 9:00-12:00</td>
+        <td>77</td>
+        <td><p>拥有国际软件能力成熟度认证评估的最高资质CMMIL5资质，以及电子与智能化工程专业承包壹级、建筑智能化系统设计专项甲级、信息系统集成及服务壹级、安全防范工程设计施工壹级等50余项资质和产品认证。</p></td>
+        <td>待审核</td>
+        <td>
+          <a href="detail.html" class="layui-btn layui-btn-sm">详情</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="paginate" id="test1"></div>
+  <script src="../../layui.js"></script>
+  <script>
+    layui.use('laypage', function () {
+      var laypage = layui.laypage;
+
+      //执行一个laypage实例
+      laypage.render({
+        elem: 'test1'
+        , count: 50
+        , jump: function (obj, first) {
+          //obj包含了当前分页的所有参数，比如：
+          console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+          console.log(obj.limit); //得到每页显示的条数
+
+          //首次不执行
+          if (!first) {
+            //do something
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

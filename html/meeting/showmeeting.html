@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查看会议室</title>
+  <link rel="stylesheet" href="../../css/layui.css">
+  <style>
+    .paginate {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="layui-table">
+    <colgroup>
+      <col width="150">
+      <col width="200">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>会议室编号</th>
+        <th>会议室位置</th>
+        <th>可参会人数</th>
+        <th>是否有投影</th>
+        <th>会议室状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td>一层东南角</td>
+        <td>50</td>
+        <td>是</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>一层北边</td>
+        <td>100</td>
+        <td>是</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>一层西南角</td>
+        <td>50</td>
+        <td>否</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+      <tr>
+        <td>201</td>
+        <td>二层东南角</td>
+        <td>50</td>
+        <td>是</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+      <tr>
+        <td>202</td>
+        <td>二层北边</td>
+        <td>100</td>
+        <td>是</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+      <tr>
+        <td>301</td>
+        <td>三层东南角</td>
+        <td>50</td>
+        <td>是</td>
+        <td>可预约</td>
+        <td>
+          <button type="button" class="layui-btn layui-btn-sm">删除</button>
+          <a href="editmeeting.html" class="layui-btn layui-btn-sm">编辑</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="paginate" id="test1"></div>
+  <script src="../../layui.js"></script>
+  <script>
+    layui.use('laypage', function () {
+      var laypage = layui.laypage;
+
+      //执行一个laypage实例
+      laypage.render({
+        elem: 'test1'
+        , count: 50
+        , jump: function (obj, first) {
+          //obj包含了当前分页的所有参数，比如：
+          console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+          console.log(obj.limit); //得到每页显示的条数
+
+          //首次不执行
+          if (!first) {
+            //do something
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
